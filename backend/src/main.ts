@@ -8,7 +8,11 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
 
-  app.enableCors();
+  app.enableCors({
+    origin: ["http://207.244.238.96:54321", "http://207.244.238.96", "https://cloit-test.onrender.com"],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true
+  });
 
   await app.listen(54321);
 }
