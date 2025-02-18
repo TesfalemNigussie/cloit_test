@@ -21,6 +21,9 @@ export default function MenusPage() {
   useEffect(() => {
     if (selectedSystem) {
       setCurrentMenuTree(menu.filter((e) => e.id == selectedSystem));
+    } else {
+      if (menu.length > 0)
+        setCurrentMenuTree(menu[0].children ?? []);
     }
   }, [selectedSystem, menu]);
 
