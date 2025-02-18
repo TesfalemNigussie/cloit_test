@@ -49,7 +49,7 @@ export const MenuInput = ({ selectedMenu, action, onSave }: { selectedMenu: Menu
                 <input
                     type="text"
                     readOnly
-                    value={menuDetail?.parentId ?? ""}
+                    value={menuDetail?.parentName ?? ""}
                     className=" w-full p-4  bg-[#F9FAFB] rounded-2xl"
                 />
             </div>

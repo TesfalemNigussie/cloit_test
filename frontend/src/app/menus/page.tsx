@@ -40,7 +40,7 @@ export default function MenusPage() {
 
     if (action == Action.Remove) setIsModalOpen(true);
     else if (action == Action.Add) {
-      selectedItem = { id: "", name: "", parentId: selectedItem?.id ?? null, children: [], depth: 0, createdAt: '', updatedAt: '' };
+      selectedItem = { id: "", name: "", parentId: selectedItem?.id ?? null, parentName: selectedItem?.name ?? null, children: [], depth: 0, createdAt: '', updatedAt: '' };
     }
 
     setSelectedMenu(selectedItem);
@@ -51,7 +51,7 @@ export default function MenusPage() {
     if (action == Action.Add) await addMenu(menu);
     else if (action == Action.Update) await editMenu(menu.id, menu);
 
-    toast.success('Success'); 
+    toast.success('Success');
 
     setSelectedMenu(null);
     setAction(Action.View);
@@ -64,13 +64,13 @@ export default function MenusPage() {
     setIsModalOpen(false);
     setSelectedMenu(null);
     setAction(Action.View);
-    toast.success('Success'); 
+    toast.success('Success');
   };
 
   const handleSelected = (value: string) => {
     if (value == 'AddNewItem') {
       setAction(Action.Add);
-      setSelectedMenu({ id: "", name: "", parentId: null, children: [], depth: 0, createdAt: '', updatedAt: '' });
+      setSelectedMenu({ id: "", name: "", parentId: null, children: [], depth: 0, createdAt: '', updatedAt: '', parentName: '' });
       setCurrentMenuTree([]);
       setSelectedSystem('');
     } else {

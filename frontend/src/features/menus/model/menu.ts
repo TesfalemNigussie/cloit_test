@@ -5,6 +5,8 @@ interface Menu {
 
     parentId: string | null;
 
+    parentName: string | null;
+
     depth: number;
 
     createdAt: string;
