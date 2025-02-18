@@ -1,5 +1,5 @@
 {
-  "name": "menu-management-backend",
+  "name": "cloit_backend",
   "version": "0.0.1",
   "description": "Nest.js backend for menu management",
   "private": true,
