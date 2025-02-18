@@ -41,6 +41,9 @@ export default function MenusPage() {
     if (action == Action.Remove) setIsModalOpen(true);
     else if (action == Action.Add) {
       selectedItem = { id: "", name: "", parentId: selectedItem?.id ?? null, parentName: selectedItem?.name ?? null, children: [], depth: 0, createdAt: '', updatedAt: '' };
+    } else {
+      if (selectedItem)
+        selectedItem.parentName = findMenuById(selectedItem?.parentId ?? '', menu!)?.name ?? null;
     }
 
     setSelectedMenu(selectedItem);
