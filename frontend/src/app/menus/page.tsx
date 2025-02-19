@@ -118,12 +118,12 @@ export default function MenusPage() {
           </select>
         </div>
 
-        <div className="grid w-full grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4 ">
           <div className="md:col-span-1">
             <NestedMenu menus={currentMenuTree ?? []} onMenuSelected={onMenuSelected} />
           </div>
 
-          <div className="md:col-span-2 w-full lg:w-1/2">
+          <div className="md:col-span-1 w-full lg:w-4/5 ">
             <MenuInput selectedMenu={selectedMenu} action={action} onSave={(menu) => onSave(menu, action)} />
           </div>
         </div>
